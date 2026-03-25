@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora | Guilherme</title>
+  <link rel="stylesheet" href="calculadora.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora</h1>
+
+    <input type="text" id="resultado" readonly>
+
+    <div class="botoes">
+      <button onclick="limpar()">C</button>
+      <button onclick="apagar()">←</button>
+      <button onclick="inserir('/')">/</button>
+      <button onclick="inserir('*')">*</button>
+
+      <button onclick="inserir('7')">7</button>
+      <button onclick="inserir('8')">8</button>
+      <button onclick="inserir('9')">9</button>
+      <button onclick="inserir('-')">-</button>
+
+      <button onclick="inserir('4')">4</button>
+      <button onclick="inserir('5')">5</button>
+      <button onclick="inserir('6')">6</button>
+      <button onclick="inserir('+')">+</button>
+
+      <button onclick="inserir('1')">1</button>
+      <button onclick="inserir('2')">2</button>
+      <button onclick="inserir('3')">3</button>
+      <button onclick="calcular()">=</button>
+
+      <button class="zero" onclick="inserir('0')">0</button>
+      <button onclick="inserir('.')">.</button>
+    </div>
+
+    <a href="../../index.html" class="voltar">Voltar ao Portfólio</a>
+  </div>
+
+  <script src="calculadora.js"></script>
+</body>
+</html>

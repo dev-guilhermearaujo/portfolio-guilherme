@@ -241,60 +241,84 @@ margin-top:50px;
 color:#94a3b8;
 }
 
-@media(max-width:768px){
+@media (max-width: 768px){
+  header{
+    padding:12px 0;
+  }
 
-.hero-content{
-flex-direction:column;
-text-align:center;
-}
+  nav{
+    flex-direction:column;
+    gap:12px;
+  }
 
-}
+  nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    padding:0 12px;
+  }
 
-.tech{
-margin-top:10px;
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-}
+  nav a{
+    font-size:14px;
+    padding:6px 8px;
+  }
 
-.tech span{
-background:#0f172a;
-padding:5px 10px;
-border-radius:6px;
-font-size:12px;
-border:1px solid rgba(255,255,255,0.1);
-}
+  .hero{
+    min-height:100vh;
+    height:auto;
+    padding-top:170px;
+    padding-bottom:60px;
+  }
 
-.links{
-display:flex;
-gap:15px;
-margin-top:15px;
-}
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+    gap:30px;
+  }
 
-.links a{
-text-decoration:none;
-color:#38bdf8;
-font-weight:600;
-}
+  .foto{
+    width:180px;
+    height:180px;
+  }
 
-.links a:hover{
-text-decoration:underline;
-}
+  .hero h1{
+    font-size:30px;
+    line-height:1.2;
+  }
 
-.skills-container{
-display:flex;
-flex-direction:column;
-gap:30px;
-}
+  .cargo{
+    font-size:18px;
+  }
 
-.skills-group h3{
-margin-bottom:15px;
-color:#38bdf8;
-font-size:18px;
-}
+  .tecnologias{
+    font-size:13px;
+  }
 
-section{
-padding:120px 20px;
-max-width:1100px;
-margin:auto;
+  .hero p{
+    font-size:14px;
+  }
+
+  .social{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .social a{
+    padding:10px 14px;
+    font-size:14px;
+  }
+
+  section{
+    padding:80px 16px;
+  }
+
+  .titulo{
+    font-size:26px;
+    margin-bottom:28px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
 }

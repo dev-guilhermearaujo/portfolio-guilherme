@@ -18,13 +18,13 @@ body{
 
 .container{
   width:100%;
-  max-width:380px;
-  background:rgba(2,6,23,0.85);
-  backdrop-filter:blur(10px);
+  max-width:460px;
+  background:rgba(2,6,23,0.88);
+  backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,0.08);
-  border-radius:20px;
-  padding:30px 24px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.35);
+  border-radius:24px;
+  padding:32px 24px;
+  box-shadow:0 24px 48px rgba(0,0,0,0.35);
   text-align:center;
 }
 
@@ -44,7 +44,7 @@ input{
   width:100%;
   padding:14px 16px;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   background:#e5e7eb;
   color:#111827;
   font-size:15px;
@@ -55,13 +55,14 @@ button{
   width:100%;
   padding:14px;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   background:#38bdf8;
   color:#0f172a;
   font-weight:700;
   font-size:15px;
   cursor:pointer;
   transition:0.3s;
+  box-shadow:0 8px 18px rgba(56,189,248,0.18);
 }
 
 button:hover{
@@ -69,14 +70,77 @@ button:hover{
   background:#0ea5e9;
 }
 
+.secundario{
+  background:#1e293b;
+  color:#e2e8f0;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:none;
+}
+
+.secundario:hover{
+  background:#334155;
+}
+
+.historico-box{
+  margin-top:18px;
+  text-align:left;
+}
+
+.historico-topo{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.historico-topo h3,
+.previsao-box h3{
+  font-size:14px;
+  color:#cbd5e1;
+}
+
+.limpar-historico{
+  width:auto;
+  padding:6px 10px;
+  font-size:12px;
+  background:#334155;
+  color:#e2e8f0;
+  border-radius:10px;
+}
+
+.historico{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.tag-cidade{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#e2e8f0;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.3s;
+  width:auto;
+  box-shadow:none;
+}
+
+.tag-cidade:hover{
+  background:#38bdf8;
+  color:#0f172a;
+}
+
 .resultado{
   margin-top:24px;
-  min-height:180px;
+  min-height:240px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   gap:10px;
+  animation:fadeIn 0.4s ease;
 }
 
 .mensagem-inicial{
@@ -86,11 +150,11 @@ button:hover{
 
 .resultado h2{
   color:#ffffff;
-  font-size:28px;
+  font-size:30px;
 }
 
 .temperatura{
-  font-size:42px;
+  font-size:46px;
   font-weight:700;
   color:#38bdf8;
 }
@@ -102,8 +166,9 @@ button:hover{
 }
 
 .icone-clima{
-  font-size:52px;
+  font-size:58px;
   margin:4px 0;
+  filter:drop-shadow(0 6px 12px rgba(0,0,0,0.25));
 }
 
 .info-extra{
@@ -117,8 +182,14 @@ button:hover{
 .info-box{
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.06);
-  border-radius:12px;
-  padding:12px;
+  border-radius:14px;
+  padding:14px 12px;
+  transition:0.3s;
+}
+
+.info-box:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.07);
 }
 
 .info-box span{
@@ -133,6 +204,49 @@ button:hover{
   color:white;
 }
 
+.previsao-box{
+  margin-top:24px;
+  text-align:left;
+}
+
+.previsao{
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.previsao-dia{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:14px;
+  padding:12px 8px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.previsao-dia:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.08);
+}
+
+.previsao-dia .dia{
+  font-size:12px;
+  color:#cbd5e1;
+  margin-bottom:6px;
+}
+
+.previsao-dia .icone{
+  font-size:22px;
+  margin-bottom:6px;
+}
+
+.previsao-dia .temp{
+  font-size:13px;
+  font-weight:600;
+  color:white;
+}
+
 .loading{
   color:#38bdf8;
   font-weight:600;
@@ -143,9 +257,19 @@ button:hover{
   font-weight:600;
 }
 
+.spinner{
+  width:34px;
+  height:34px;
+  border:4px solid rgba(255,255,255,0.18);
+  border-top:4px solid #38bdf8;
+  border-radius:50%;
+  animation:girar 0.8s linear infinite;
+  margin-bottom:8px;
+}
+
 .voltar{
   display:inline-block;
-  margin-top:20px;
+  margin-top:24px;
   color:#38bdf8;
   text-decoration:none;
   font-weight:600;
@@ -155,7 +279,27 @@ button:hover{
   text-decoration:underline;
 }
 
-@media (max-width: 480px){
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes girar{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@media (max-width: 520px){
   .container{
     padding:24px 18px;
   }
@@ -165,6 +309,14 @@ button:hover{
   }
 
   .temperatura{
-    font-size:36px;
+    font-size:38px;
+  }
+
+  .info-extra{
+    grid-template-columns:1fr;
+  }
+
+  .previsao{
+    grid-template-columns:repeat(2,1fr);
   }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App de Clima</title>
+  <title>App de Clima Premium</title>
   <link rel="stylesheet" href="clima.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -15,10 +15,24 @@
     <div class="busca">
       <input type="text" id="cidade" placeholder="Digite uma cidade">
       <button onclick="buscar()">Buscar</button>
+      <button class="secundario" onclick="usarLocalizacao()">Usar minha localização</button>
+    </div>
+
+    <div class="historico-box">
+      <div class="historico-topo">
+        <h3>Últimas buscas</h3>
+        <button class="limpar-historico" onclick="limparHistorico()">Limpar</button>
+      </div>
+      <div id="historico" class="historico"></div>
     </div>
 
     <div class="resultado" id="resultado">
       <p class="mensagem-inicial">Busque o clima de uma cidade</p>
+    </div>
+
+    <div class="previsao-box" id="previsao-box">
+      <h3>Próximos dias</h3>
+      <div class="previsao" id="previsao"></div>
     </div>
 
     <a href="../../index.html" class="voltar">Voltar ao Portfólio</a>
